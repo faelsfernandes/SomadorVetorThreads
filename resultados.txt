@@ -1,0 +1,11 @@
+X-_-_-_-_-X-_-_-_-_-RESULTADOSX-_-_-_-_-X-_-_-_-_-
+
+Tamanho do vetor: 500000000
+Tempo sequencial: 35,649s
+Tempo com duas threads: 19,511s
+
+Neste trabalho foi utilizado a API OpenMP que funcioan de forma Fork-join em que várias threads são criadas em determinado ponto do código (fork) e depois em outro todas as threads exceto a inicial deixam de existir (join), sendo esta parte sequencial.
+
+Iniciou-se a região paralela utilizando a diretiva de compilação "#pragma omp parallel" e utilizando a função "num_threads(2)" para fazer com que o programa rode com duas num_threads. Em seguida foi utilizada a diretiva "#pragma omp for" para informar ao compilador que o trabalho executado no loop "for" seja dividido entre as threads.
+
+Ao final pode-se observar que o uso de threads diminuiu o tempo de execução pela metade, o que mostra a eficácia do uso ao comparar com o código executado de forma sequencial.
